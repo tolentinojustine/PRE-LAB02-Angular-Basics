@@ -1,0 +1,54 @@
+<main class="resume">
+  <header class="intro">
+    <h1>{{ fullName }}</h1>
+    <p>
+      {{ location }} |
+      {{ phone }} |
+      <a [href]="'mailto:' + email">{{ email }}</a>
+    </p>
+  </header>
+
+  <!-- Personal Profile -->
+  <section>
+    <h2>Personal Profile</h2>
+    <p>{{ profile }}</p>
+  </section>
+
+  <app-profile-card></app-profile-card>
+
+  <!-- Key Skills -->
+  <section>
+    <h2>Key Skills</h2>
+    <ul>
+      @for (skill of skills; track skill) {
+        <li>{{ skill }}</li>
+      }
+    </ul>
+  </section>
+
+  <!-- Technical Proficiencies (3 Categories) -->
+  <section>
+    <h2>Technical Proficiencies</h2>
+    <div class="proficiencies-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 12px;">
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 16px; border-radius: var(--radius);">
+        <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 6px;">Frontend Development</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">HTML5, CSS3, JavaScript, TypeScript, Angular</p>
+      </div>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 16px; border-radius: var(--radius);">
+        <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 6px;">Backend & Databases</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Node.js, Express, PHP, MySQL, PDO Integration</p>
+      </div>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 16px; border-radius: var(--radius);">
+        <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 6px;">System Analysis</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Data Flow Diagrams, ERDs, Architecture Design</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Angular Interaction -->
+  <section class="interaction">
+    <h2>Angular Interaction</h2>
+    <p>{{ message }}</p>
+    <button (click)="showMessage()">Click Me</button>
+  </section>
+</main>

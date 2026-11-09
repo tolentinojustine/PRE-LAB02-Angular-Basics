@@ -1,0 +1,171 @@
+/* Base Variables & Modern Reset */
+:root {
+  --primary: #7a1f3d;
+  --primary-hover: #5f172f;
+  --text-main: #2b2d42;
+  --text-muted: #555555;
+  --border-color: #e2e8f0;
+  --bg-card: #f8fafc;
+  --radius: 8px;
+  --font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f1f5f9;
+  font-family: var(--font-stack);
+  line-height: 1.6;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Resume Container */
+.resume {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Header / Intro Section */
+.intro {
+  text-align: center;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+}
+
+.intro h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.intro p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+.intro a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.intro a:hover {
+  text-decoration: underline;
+}
+
+/* Sections & Headings */
+section {
+  margin-bottom: 32px;
+}
+
+section h2 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 6px;
+  margin-bottom: 16px;
+}
+
+/* Custom Card Component (A Little About Me) */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin: 16px 0;
+}
+
+.card h3 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 12px;
+  background-color: #f3e8ee;
+  color: var(--primary);
+  border-radius: 20px;
+  font-size: 0.825rem;
+  font-weight: 600;
+}
+
+/* Skills List */
+ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 32px;
+  padding-left: 20px;
+}
+
+ul li {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* Button & Controls */
+button {
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 18px;
+  background: #7a1f3d;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: #5f172f;
+}
+
+/* Responsive Styles */
+@media (max-width: 640px) {
+  .resume {
+    margin: 0;
+    padding: 24px 16px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  ul {
+    grid-template-columns: 1fr;
+  }
+
+  .intro h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+  }
+  .resume {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+  button, .no-print {
+    display: none !important;
+  }
+}
